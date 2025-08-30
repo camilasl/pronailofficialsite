@@ -18,7 +18,7 @@
 
 /* Fundo desfocado quando popup ativo */
 .blurred main {
-    filter: blur(3px);
+    filter: blur(1px);
     pointer-events: none;
 }
 
