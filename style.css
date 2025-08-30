@@ -1,0 +1,132 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#desktop,
+#tablet {
+    display: none;
+}
+
+#desktop img,
+#tablet img,
+#mobile img {
+    width: 100%;
+}
+
+/* Fundo desfocado quando popup ativo */
+.blurred main {
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+/* Popup */
+.cookie-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: none; /* sobrescrito inline para aparecer */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.cookie-box {
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+    max-width: 460px;
+    /*text-align: center;*/
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+}
+
+.cookie-box .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cookie-box .close-btn:hover {
+    color: #000;
+}
+
+.cookie-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #2b2940;
+}
+
+.cookie-box p {
+    font-size: 0.95rem;
+    color: #2b2940;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cookie-actions button {
+    border: none;
+    min-width: 140px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Botões */
+.cookie-actions .accept {
+    background: #2b2940;
+    color: #fff;
+}
+.cookie-actions .accept:hover {
+    background: #09014b;
+}
+
+.cookie-actions .decline {
+    background: #e0e0e0;
+    color: #333;
+}
+.cookie-actions .decline:hover {
+    background: #bdbdbd;
+}
+
+@media only screen and (min-width: 768px) {
+    #desktop {
+        display: block;
+    }
+
+    #tablet {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 460px) { 
+    #tablet {
+        display: block;
+    }
+
+    #mobile {
+        display: none;
+    }
+}
