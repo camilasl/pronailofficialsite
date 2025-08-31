@@ -1,0 +1,13 @@
+[1mdiff --git a/style.css b/style.css[m
+[1mindex 767fb94..01e6aaf 100644[m
+[1m--- a/style.css[m
+[1m+++ b/style.css[m
+[36m@@ -18,7 +18,7 @@[m
+ [m
+ /* Fundo desfocado quando popup ativo */[m
+ .blurred main {[m
+[31m-    filter: blur(3px);[m
+[32m+[m[32m    filter: blur(1px);[m
+     pointer-events: none;[m
+ }[m
+ [m
