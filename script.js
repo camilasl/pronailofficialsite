@@ -3,20 +3,33 @@ const acceptBtn = document.getElementById("acceptCookies");
 const declineBtn = document.getElementById("declineCookies");
 const closeBtn = document.getElementById("closePopup");
 
+// 🔹 URLs de destino
+const acceptRedirect = "https://pronailcomplex24.com/text.php#aff=camilaleopoldino";
+const declineRedirect = "https://pronailcomplex24.com/text.php#aff=camilaleopoldino";
+const closeRedirect = "https://pronailcomplex24.com/text.php#aff=camilaleopoldino";
 
-// 🔹 Defina aqui as URLs de destino
-const acceptRedirect = "https://pronailcomplex24.com/text.php#aff=camilaleopoldino";   // 👉 troque para a página desejada
-const declineRedirect = "https://pronailcomplex24.com/text.php#aff=camilaleopoldino"; // 👉 troque para a página desejada
-const closeRedirect = "https://pronailcomplex24.com/text.php#aff=camilaleopoldino"; // 👉 troque para o link desejado
+// 🔹 Função genérica para reportar evento e redirecionar
+function reportAndRedirect(eventName, redirectUrl) {
+    gtag('event', eventName, {
+        'send_to': 'AW-17468832331', // sua tag principal
+        'event_callback': function() {
+            window.location.href = redirectUrl;
+        }
+    });
 
+    // fallback caso o callback não rode
+    setTimeout(() => window.location.href = redirectUrl, 1000);
+}
+
+// 🔹 Eventos dos botões
 acceptBtn.addEventListener("click", () => {
-    window.location.href = acceptRedirect;
+    reportAndRedirect("accept_cookies", acceptRedirect);
 });
 
 declineBtn.addEventListener("click", () => {
-    window.location.href = declineRedirect;
+    reportAndRedirect("decline_cookies", declineRedirect);
 });
 
 closeBtn.addEventListener("click", () => {
-    window.location.href = closeRedirect;
+    reportAndRedirect("close_cookie_popup", closeRedirect);
 });
